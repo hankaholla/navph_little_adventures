@@ -3,7 +3,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class NPC : MonoBehaviour
+public class NPC_Anxiety : MonoBehaviour
 {
 
     private Transform player;

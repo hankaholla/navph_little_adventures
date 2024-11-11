@@ -15,6 +15,15 @@ public class anxiety_controler : MonoBehaviour
     public float upRate = 2f;
 
     private bool decay = true;  
+
+    public anxiety_Fade cameraController;
+
+    private bool fading = false;
+
+    void Start()
+    {
+        // Get the CameraController script from the Main Camera
+    }
     void Update()
     {
         GameObject[] npcs = GameObject.FindGameObjectsWithTag(anxiety_tag);
@@ -42,6 +51,34 @@ public class anxiety_controler : MonoBehaviour
         }
         proximityTimer = (float)(Mathf.Round(proximityTimer * 100) / 100.0);
         countText.text = proximityTimer.ToString();
+
+        Check_anxiety_level();
+    }
+
+    void Check_anxiety_level()
+    {
+        if (proximityTimer < 2)
+        {
+            if (fading)
+            {
+                fading = false;
+                cameraController.TriggerFadeIn();
+                Debug.Log("controlel");
+            }
+            return;
+        }
+        else
+        {
+            if (!fading)
+            {
+                
+                fading = true;
+                cameraController.TriggerFadeOut();
+                Debug.Log("controlel");
+            }
+                
+        }
+            
     }
 
 
