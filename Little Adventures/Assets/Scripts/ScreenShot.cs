@@ -11,6 +11,10 @@ public class ScreenShot : MonoBehaviour
     [Header("Photo Taker")]
     [SerializeField] private Image PhotoDisplayArea;
     [SerializeField] private GameObject photoFrame;
+
+    [Header("Flash Effect")]
+    [SerializeField] private GameObject cameraflash;
+    [SerializeField] private float flashTime;
     private Texture2D screen_capture;
 
     private bool viewingPhoto;
@@ -49,7 +53,19 @@ public class ScreenShot : MonoBehaviour
         Sprite photoSprite = Sprite.Create(screen_capture, new Rect(0.0f,0.0f, screen_capture.width,screen_capture.height), new Vector2(0.5f,0.5f), 100.0f);
         PhotoDisplayArea.sprite = photoSprite;
 
+        StartCoroutine(CameraFlashEffect());
         photoFrame.SetActive(true);
+        
+        
+    }
+
+    IEnumerator CameraFlashEffect()
+    {
+        cameraflash.SetActive(true);
+        Debug.Log("here");
+        yield return new WaitForSeconds(flashTime);
+        Debug.Log("we");
+        cameraflash.SetActive(false);
     }
 
     void RemovePhoto()
