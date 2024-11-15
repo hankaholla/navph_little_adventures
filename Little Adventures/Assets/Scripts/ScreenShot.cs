@@ -17,6 +17,9 @@ public class ScreenShot : MonoBehaviour
     [SerializeField] private float flashTime;
     private Texture2D screen_capture;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource Audio;
+
     private bool viewingPhoto;
     private void Start()
     {
@@ -54,18 +57,20 @@ public class ScreenShot : MonoBehaviour
         PhotoDisplayArea.sprite = photoSprite;
 
         StartCoroutine(CameraFlashEffect());
-        photoFrame.SetActive(true);
+        
         
         
     }
 
     IEnumerator CameraFlashEffect()
     {
+        Audio.Play();
+        yield return new WaitForSeconds(1f);
         cameraflash.SetActive(true);
-        Debug.Log("here");
         yield return new WaitForSeconds(flashTime);
-        Debug.Log("we");
         cameraflash.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        photoFrame.SetActive(true);
     }
 
     void RemovePhoto()
