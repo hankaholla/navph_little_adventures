@@ -20,6 +20,8 @@ public class ScreenShot : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource Audio;
 
+    [SerializeField] private PolaroidAnimationControler polaroidAnimationControler;
+
     private bool viewingPhoto;
     private void Start()
     {
@@ -45,6 +47,8 @@ public class ScreenShot : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0,0, Screen.width, Screen.height);
+
+        polaroidAnimationControler.PlayAnimation();
 
         screen_capture.ReadPixels(regionToRead, 0,0, false );
         screen_capture.Apply();
