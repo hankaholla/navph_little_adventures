@@ -1,11 +1,12 @@
 using UnityEngine;
 using TMPro;
 using System.Runtime.InteropServices;
+
+[RequireComponent(typeof(Anxiety_Bar))]
 public class anxiety_controler : MonoBehaviour
 {
     //[SerializeField] TextMeshProUGUI countText;
     [SerializeField] string anxiety_tag;
-
 
     public float proximityThreshold = 5f;  // Set the distance threshold for being "too close"
 

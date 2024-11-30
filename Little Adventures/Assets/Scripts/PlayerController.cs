@@ -96,6 +96,9 @@ public class PlayerController2 : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        if (characterController == null) {
+            characterController = GetComponent<CharacterController>();
+        }
         input = context.ReadValue<Vector2>();
         direction = new Vector3(input.x, 0.0f, input.y);
     }
