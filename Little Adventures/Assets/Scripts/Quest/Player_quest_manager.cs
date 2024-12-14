@@ -24,11 +24,22 @@ public class Player_quest_manager : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position, quest.transform.position);
 
-            if (distance < proximityThreshold)
+            if (distance < proximityThreshold && quest.interact)
             {
-                Debug.Log("Create ! ");
-                quest.npc_quest_Manager.Show_Button();
+                quest.Show_Button();
+
+                if(Input.GetKeyDown(KeyCode.C))
+                {
+                    quest.Accept_quest();
+                }
             }
+            else if (distance > proximityThreshold && quest.show)
+            {
+                quest.Hide_Button();
+            }
+
+            //on press x
+            //quest.npc_quest_Manager.Accept_quest();
                 
         } 
 
