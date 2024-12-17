@@ -12,6 +12,8 @@ public class Quest_manager : MonoBehaviour
     public List <Quest> questList = new List<Quest>();
     public List <Quest> currentQuestList = new List<Quest>();
 
+    public List <Quest> FinishQuestList = new List<Quest>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +23,14 @@ public class Quest_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int x = 0; x < questList.Count; x++)
+        {
+            if (questList[x].finished == true)
+            {
+                Destroy(questList[x]);
+                questList.RemoveAt(x);
+            }
 
+        }
     }
 }
