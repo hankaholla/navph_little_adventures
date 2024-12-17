@@ -6,7 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    private float distanceToPlayer;
+    [SerializeField] private float distanceToPlayer = 15f;
 
     private Vector2 input;
 
@@ -15,11 +15,11 @@ public class CameraManager : MonoBehaviour
 
     private CameraRotation cameraRotation;
 
-    private void Awake()
-    {
-        // remember initial distance from player to camera
-        distanceToPlayer = Vector3.Distance(transform.position, target.position);
-    }
+    // private void Awake()
+    // {
+    //     // remember initial distance from player to camera
+    //     distanceToPlayer = Vector3.Distance(transform.position, target.position);
+    // }
 
     public void Look(InputAction.CallbackContext context)
     {

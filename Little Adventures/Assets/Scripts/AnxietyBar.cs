@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Anxiety_Bar : MonoBehaviour
+public class AnxietyBar : MonoBehaviour
 {
 
 	public Slider slider;

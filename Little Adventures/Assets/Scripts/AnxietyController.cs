@@ -2,25 +2,25 @@ using UnityEngine;
 using TMPro;
 using System.Runtime.InteropServices;
 
-[RequireComponent(typeof(Anxiety_Bar))]
-public class anxiety_controler : MonoBehaviour
+[RequireComponent(typeof(AnxietyBar))]
+public class AnxietyController : MonoBehaviour
 {
     //[SerializeField] TextMeshProUGUI countText;
     [SerializeField] string anxiety_tag;
 
-    public float proximityThreshold = 5f;  // Set the distance threshold for being "too close"
+    public static float proximityThreshold = 10f;  // Set the distance threshold for being "too close"
 
     public int Max_Anxiety = 5;
     private float proximityTimer = 0f;
     public float decayRate = 1f;
 
-    public Anxiety_Bar anxiety_bar;
+    public AnxietyBar anxiety_bar;
 
     public float upRate = 2f;
 
     private bool decay = true;  
 
-    public anxiety_Fade cameraController;
+    public AnxietyFade cameraController;
 
     private int up_choice = 0;
     private int down_choice = 0;

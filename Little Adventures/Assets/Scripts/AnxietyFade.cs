@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
-public class anxiety_Fade : MonoBehaviour
+public class AnxietyFade : MonoBehaviour
 {
     public Image fadeImage;  // Reference to the Image component of the panel
     public float fadeDuration = 2.0f;  // Duration of the fade effect
