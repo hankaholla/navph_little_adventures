@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Ground
   - NPC
+  - Quest_npc
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - PostProcessLayer

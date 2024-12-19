@@ -124,6 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf6ecf3018e4bd4b92d835fceed1866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCMaterials:
+  - {fileID: 2100000, guid: 9b8b90da8f3ac1f4abbc6dd762344157, type: 2}
+  - {fileID: 2100000, guid: 23e332cea327c324a803ff57a0386655, type: 2}
+  - {fileID: 2100000, guid: 3a46dacdf71bbb34e831a503b39452c4, type: 2}
+  - {fileID: 2100000, guid: 5b7cfd13ca7465b44ab99bf1ba7c11cd, type: 2}
   lineRenderer: {fileID: 0}
   anxietyCircleColor: {r: 0, g: 1, b: 0, a: 1}
   maxMoveDistance: 10

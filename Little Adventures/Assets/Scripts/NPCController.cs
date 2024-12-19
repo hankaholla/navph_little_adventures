@@ -5,16 +5,19 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
-public class AnxietyCircleController : MonoBehaviour
+
+[RequireComponent(typeof(Renderer))]
+public class NPCController : MonoBehaviour
 {
     // references to player and this NPC object
     private Transform playerTransform;
     private Transform npcTransform;
-
-    private float anxietyCircleRadius = AnxietyController.proximityThreshold;
+    [SerializeField] Material[] NPCMaterials;
 
     public LineRenderer lineRenderer;
+    private float anxietyCircleRadius = AnxietyController.proximityThreshold;
     [SerializeField] public Color anxietyCircleColor = Color.green;
+    private Renderer objectRenderer;
 
     // nav mesh agent fields
     private NavMeshAgent agent;
@@ -26,10 +29,23 @@ public class AnxietyCircleController : MonoBehaviour
     {
         npcTransform = gameObject.transform;
 
-        // initialize NPC with random size and color
+        // initialize NPC with random size
         float randomXZ = UnityEngine.Random.Range(1f, 2f);  // the same random number for X and Z coordinates to make NPC symmetrical
         npcTransform.localScale = new Vector3(randomXZ, UnityEngine.Random.Range(1f, 1.5f), randomXZ);
         
+        // initialize NPC with random color
+        objectRenderer = GetComponent<Renderer>();
+        if (NPCMaterials.Length > 0)
+        {
+            // Assign the material to the GameObject
+            Material randomMaterial = NPCMaterials[UnityEngine.Random.Range(0, NPCMaterials.Length)];
+            objectRenderer.material = randomMaterial;
+        }
+        else
+        {
+            Debug.LogWarning("No materials assigned to NPC");
+        }
+
         agent = GetComponent<NavMeshAgent>();
         // initialize timer randomly to desync NPC movements
         timer = UnityEngine.Random.Range(0.0f, movementWaitTime);  
