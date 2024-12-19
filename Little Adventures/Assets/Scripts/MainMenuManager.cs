@@ -3,6 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject KeyBindingsPanel;
+
+    public void ToggleKeyBindingsPanel()
+    {
+        bool isActive = KeyBindingsPanel.activeSelf; // Check if the panel is currently active
+        KeyBindingsPanel.SetActive(!isActive);      // Toggle the active state
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("City");
@@ -17,16 +25,6 @@ public class MainMenuManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void OpenKeyBindings()
-    {
-        // Logic to toggle Key Bindings Panel visibility.
-    }
-
-    public void ToggleMusic(bool isOn)
-    {
-        // Logic to turn music on/off.
     }
 }
 
