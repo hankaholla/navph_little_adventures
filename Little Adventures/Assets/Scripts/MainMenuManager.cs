@@ -7,11 +7,18 @@ using UnityEditor;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject KeyBindingsPanel;
+    public GameObject CreditsPanel;
 
     public void ToggleKeyBindingsPanel()
     {
         bool isActive = KeyBindingsPanel.activeSelf; // Check if the panel is currently active
         KeyBindingsPanel.SetActive(!isActive);      // Toggle the active state
+    }
+
+    public void ToggleCreditsPanel()
+    {
+        bool isActive = CreditsPanel.activeSelf; // Check if the panel is currently active
+        CreditsPanel.SetActive(!isActive);      // Toggle the active state
     }
 
     public void StartGame()
