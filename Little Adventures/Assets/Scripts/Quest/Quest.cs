@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
 
 public class Quest : MonoBehaviour
 {
@@ -15,28 +16,95 @@ public class Quest : MonoBehaviour
 
     public string EndMessage;
 
-    [SerializeField] private float proximityThreshold;
+    [SerializeField] private Quest_Logic QuestLogic;
     [SerializeField] private Image button;
     [SerializeField] private Image quest_mark;
     [SerializeField] private TextMeshProUGUI show_text;
     [SerializeField] private TextMeshProUGUI show_CutScene_text;
 
-    [SerializeField] private List <Image> questList = new List<Image>();
+    //[SerializeField] private List <Image> questList = new List<Image>();
 
     public bool show = false; 
 
     public bool interact = true;
     public bool finished = false;
 
-    private bool Accept = false;
     private bool cutscene_show = false;
 
+    void Start()
+    {
+        button.enabled = false;
+        quest_mark.enabled = true;
+    }
 
-    private int max = 3;
-    private int taken = 0;
+    void Update()
+    {
+        if(cutscene_show && Input.anyKeyDown){
+            cutscene_show = false;
+            show_CutScene_text.gameObject.SetActive(false);
+        }
+    }
 
-    private GameObject player;
+    public void Show_Button(){
+        button.enabled = true;
+        show = true;      
+    }
 
+    public void Hide_Button(){     
+        button.enabled = false;
+        show = false;      
+    }
+
+    public void Hide_Quest_Mark(){     
+        quest_mark.enabled = false;
+        show = false;      
+    }
+
+    public void Accept_quest(){
+        interact = false;
+        show_text.text = description;
+
+        cutscene_Show();
+        Hide_Button();
+        Hide_Quest_Mark();
+
+    
+        QuestLogic.Accept_quest();
+        
+            
+        //Show_items();
+    }
+
+    private void cutscene_Show(){
+        cutscene_show = true;
+        show_CutScene_text.text = cutscene;
+    }
+
+    public void Update_quest(string upd){
+        show_text.text = upd;
+    }
+
+    public void Finish_quest(){
+        StartCoroutine(ShowMessage(EndMessage, 1));
+        show_text.gameObject.SetActive(false);
+        
+    }
+
+    IEnumerator ShowMessage(string message, float duration)
+    {
+        // Set the text and make it visible
+        show_CutScene_text.text = message;
+        show_CutScene_text.gameObject.SetActive(true);
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+        finished = true;
+        // Hide the text after the duration
+        show_CutScene_text.gameObject.SetActive(false);
+    }
+
+
+    /*
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -132,22 +200,7 @@ public class Quest : MonoBehaviour
         show_CutScene_text.text = cutscene;
     }
 
-    void Finish_quest(){
-        StartCoroutine(ShowMessage(EndMessage, 1));
-        show_text.gameObject.SetActive(false);
-        
-    }
+    
 
-    IEnumerator ShowMessage(string message, float duration)
-    {
-        // Set the text and make it visible
-        show_CutScene_text.text = message;
-        show_CutScene_text.gameObject.SetActive(true);
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(duration);
-        finished = true;
-        // Hide the text after the duration
-        show_CutScene_text.gameObject.SetActive(false);
-    }
+    */
 }

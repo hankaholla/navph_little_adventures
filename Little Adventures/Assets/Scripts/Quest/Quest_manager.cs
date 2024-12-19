@@ -33,4 +33,6 @@ public class Quest_manager : MonoBehaviour
 
         }
     }
+
+    
 }
