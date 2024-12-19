@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -18,13 +21,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        #if UNITY_EDITOR
+        EditorApplication.isPlaying = false; // Stop Play mode in Unity Editor
+        #else
+        Application.Quit(); // Quit the application in a built version
+        #endif
         Debug.Log("Quit Game");
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
