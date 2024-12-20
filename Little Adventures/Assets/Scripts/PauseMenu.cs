@@ -5,24 +5,7 @@ using UnityEngine.UI;  // For accessing UI elements
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuCanvas;  // Reference to the PauseMenu Canvas
-    private bool isPaused = false;      // Keeps track of the pause state
-
-    void Update()
-    {
-        // Check for the escape key to toggle pause menu
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("Escape key pressed");
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {                
-                PauseGame();
-            }
-        }
-    }
+    public bool isPaused = false;      // Keeps track of the pause state
 
     // Show pause menu and pause the game
     public void PauseGame()
