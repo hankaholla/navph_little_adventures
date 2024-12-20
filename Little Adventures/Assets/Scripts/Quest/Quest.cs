@@ -21,6 +21,7 @@ public class Quest : MonoBehaviour
     [SerializeField] private Image quest_mark;
     [SerializeField] private TextMeshProUGUI show_text;
     [SerializeField] private TextMeshProUGUI show_CutScene_text;
+    [SerializeField] private TextMeshProUGUI Money;
 
     //[SerializeField] private List <Image> questList = new List<Image>();
 
@@ -40,6 +41,22 @@ public class Quest : MonoBehaviour
     void Update()
     {
 
+    }
+    
+    public void Add_money(int m){
+        if (int.TryParse(Money.text, out int number))
+        {
+            number += m; // Increment the number
+            Money.text = number.ToString(); // Update the text with the new number
+        }
+    }
+
+    public void Remove_money(int m){
+        if (int.TryParse(Money.text, out int number))
+        {
+            number -= m; // Increment the number
+            Money.text = number.ToString(); // Update the text with the new number
+        }
     }
 
     public void Show_Button(){

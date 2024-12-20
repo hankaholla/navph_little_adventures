@@ -64,6 +64,7 @@ public class Quest_1 : Quest_Logic
                 if (distance < proximityThreshold)
                 {
                     taken++;
+                    quest.Add_money(1);
                     Update_quest(taken, max);
                     questList[i].enabled = false;
                     Destroy(questList[i]);
