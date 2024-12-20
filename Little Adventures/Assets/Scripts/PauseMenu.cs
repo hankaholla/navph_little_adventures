@@ -39,4 +39,11 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();  // Quit game when in build
         #endif
     }
+
+    // Return to main menu
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");  // Load menu scene
+    }
 }
