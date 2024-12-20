@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3543031566321436911, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
   m_PrefabInstance: {fileID: 8332544889325421492}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1234339085}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 165994f160464d541b810dad73d31273, type: 3}
@@ -1864,6 +1864,7 @@ MonoBehaviour:
   show_text: {fileID: 673325828}
   show_CutScene_text: {fileID: 935942087}
   Money: {fileID: 1500433607}
+  MoneyAnimator_Controler: {fileID: 0}
   show: 0
   interact: 1
   finished: 0
@@ -4060,6 +4061,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7448636553936935380, guid: 684129d7a5a3912459c4231e62db0e7d, type: 3}
   m_PrefabInstance: {fileID: 1215330370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1234339085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7398775365873614814, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
+  m_PrefabInstance: {fileID: 8332544889325421492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1234339090
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234339085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5eb0a21f62537947a6c66ec4591228d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1237563143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4281,8 +4309,9 @@ GameObject:
   - component: {fileID: 1322749879}
   - component: {fileID: 1322749881}
   - component: {fileID: 1322749880}
+  - component: {fileID: 1322749882}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Money_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4345,6 +4374,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322749878}
   m_CullTransparentMesh: 1
+--- !u!95 &1322749882
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322749878}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8988d0175151e94418372d0beea5a32e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1330233679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5413,6 +5464,7 @@ GameObject:
   - component: {fileID: 1500433606}
   - component: {fileID: 1500433608}
   - component: {fileID: 1500433607}
+  - component: {fileID: 1500433609}
   m_Layer: 5
   m_Name: MoneyText
   m_TagString: Untagged
@@ -5538,6 +5590,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500433605}
   m_CullTransparentMesh: 1
+--- !u!114 &1500433609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500433605}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946fb0e7a2bc5cc4f9219e3421597eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1507747851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6385,6 +6449,7 @@ MonoBehaviour:
   show_text: {fileID: 673325828}
   show_CutScene_text: {fileID: 935942087}
   Money: {fileID: 0}
+  MoneyAnimator_Controler: {fileID: 0}
   show: 0
   interact: 1
   finished: 0
@@ -8160,7 +8225,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7398775365873614814, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234339090}
   m_SourcePrefab: {fileID: 100100000, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
 --- !u!1001 &8481526259210399234
 PrefabInstance:

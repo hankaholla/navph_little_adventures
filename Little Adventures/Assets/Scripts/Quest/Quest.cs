@@ -23,6 +23,10 @@ public class Quest : MonoBehaviour
     [SerializeField] private TextMeshProUGUI show_CutScene_text;
     [SerializeField] private TextMeshProUGUI Money;
 
+    [SerializeField] private MoneyAnimator_Controler MoneyAnimator_Controler;
+
+    
+
     //[SerializeField] private List <Image> questList = new List<Image>();
 
     public bool show = false; 
@@ -48,6 +52,8 @@ public class Quest : MonoBehaviour
         {
             number += m; // Increment the number
             Money.text = number.ToString(); // Update the text with the new number
+
+            //MoneyAnimator_Controler.PlayAnimation();
         }
     }
 
