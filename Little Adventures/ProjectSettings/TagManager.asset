@@ -6,10 +6,12 @@ TagManager:
   tags:
   - Ground
   - NPC
-  - Quest_npc
   - Apple
   - Banana
   - Tomato
+  - Quest
+  - Quest_npc
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
