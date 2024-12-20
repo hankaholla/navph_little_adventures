@@ -876,7 +876,9 @@ RectTransform:
   m_Children:
   - {fileID: 679832711}
   - {fileID: 1034638084}
+  - {fileID: 1646201199}
   - {fileID: 2122105501}
+  - {fileID: 1579173805}
   - {fileID: 1279186164}
   m_Father: {fileID: 616131190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1851,10 +1853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ec4d14af425e841b50ca2aac0d9323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Zober 3 mince
+  title: "Zober 5 minc\xED"
   id: 0
-  description: 0/3 mince
-  cutscene: Zober 3 mince a vrat sa
+  description: "0/5 minc\xED"
+  cutscene: "Zober 5 minc\xED aby si sa mal lep\u0161ie"
   EndMessage: "Vyborne si bohat\xFD"
   QuestLogic: {fileID: 616131193}
   button: {fileID: 1398037265}
@@ -2009,6 +2011,8 @@ MonoBehaviour:
   - {fileID: 1034638086}
   - {fileID: 2122105503}
   - {fileID: 1279186162}
+  - {fileID: 1646201200}
+  - {fileID: 1579173806}
   quest: {fileID: 616131184}
   proximityThreshold: 5
 --- !u!1001 &649811396
@@ -4129,7 +4133,7 @@ GameObject:
   - component: {fileID: 1279186163}
   - component: {fileID: 1279186162}
   m_Layer: 0
-  m_Name: coin_3
+  m_Name: coin_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5384,6 +5388,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   m_PrefabInstance: {fileID: 1507747851}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1579173804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579173805}
+  - component: {fileID: 1579173807}
+  - component: {fileID: 1579173806}
+  m_Layer: 0
+  m_Name: 'coin_3 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1579173805
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579173804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -12.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 304528444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -40.42, y: 6.05}
+  m_SizeDelta: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1579173806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579173804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1579173807
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579173804}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1590287878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5669,6 +5748,81 @@ MonoBehaviour:
   quest_Manager: {fileID: 1492247891}
   quest_list: []
   proximityThreshold: 10
+--- !u!1 &1646201198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646201199}
+  - component: {fileID: 1646201201}
+  - component: {fileID: 1646201200}
+  m_Layer: 0
+  m_Name: coin_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1646201199
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646201198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 304528444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -37.72, y: 16.16}
+  m_SizeDelta: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1646201200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646201198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1646201201
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646201198}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1652892551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6008,7 +6162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Fotka
-  id: 0
+  id: 1
   description: Najdi miesto na streche na fotku
   cutscene: "Ahoj, vid\xEDm \u017Ee m\xE1\u0161 polaroid. Pozn\xE1m dobr\xE9 miesto
     na fotku. Sta\u010D\xED ak vysk\xE1\u010De\u0161 na tieto  budovy"
@@ -7217,7 +7371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567948487442678334, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -131.01
+      value: -51.01
       objectReference: {fileID: 0}
     - target: {fileID: 567948487442678334, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7734,7 +7888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5020509762459002021, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -142.42
+      value: -62.42
       objectReference: {fileID: 0}
     - target: {fileID: 5020509762459002021, guid: f78f43d1b85fffb4fb2a6c690ef74b4c, type: 3}
       propertyPath: m_LocalRotation.w

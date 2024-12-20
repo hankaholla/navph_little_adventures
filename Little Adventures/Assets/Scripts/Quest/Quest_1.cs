@@ -11,7 +11,7 @@ public class Quest_1 : Quest_Logic
     [SerializeField] private List <Image> questList = new List<Image>();
     [SerializeField] private Quest quest; 
 
-    private int max = 3;
+    private int max = 5;
     private int taken = 0;
 
     private bool Accept = false;
