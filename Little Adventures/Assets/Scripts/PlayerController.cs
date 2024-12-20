@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerController2 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // inputs
     private Vector2 input;
