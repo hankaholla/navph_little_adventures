@@ -13,7 +13,7 @@ public class ShopHUD : MonoBehaviour
         string countsString = "";
         foreach(KeyValuePair<string, int> fruitCount in targetCounts)
         {
-             countsString += fruitCount.Key + "s: " + currentCounts.GetValueOrDefault(fruitCount.Key, 0) + "/" + fruitCount.Value + "<br>";
+             countsString += fruitCount.Key + ": " + currentCounts.GetValueOrDefault(fruitCount.Key, 0) + "/" + fruitCount.Value + "<br>";
         }
         fruitCountText.text = countsString;
     }

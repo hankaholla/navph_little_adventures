@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopController : MonoBehaviour
 {
     private ShopHUD shopHUD;
+    [SerializeField] private string citySceneName;
 
     [SerializeField] private GameObject[] fruitPrefabs;
     [SerializeField] private int fruitGridSize = 5;
@@ -72,6 +74,15 @@ public class ShopController : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void Update()
+    {
+        // exit the shop when user presses escape
+         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(citySceneName);
+        }
     }
 
 }

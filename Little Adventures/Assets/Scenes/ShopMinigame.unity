@@ -760,6 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b382c99b3b7b40bee093211c57da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  citySceneName: City_v2
   fruitPrefabs:
   - {fileID: 6178368076800795599, guid: 82d322b645c9bd841839f65b48c6de5d, type: 3}
   - {fileID: 9220828068519463142, guid: 194ca21277c971b42a5e257355e5c027, type: 3}
