@@ -61,8 +61,9 @@ public class Quest_3 : Quest_Logic
                 {
                     questList[i].enabled = false;
                     Destroy(questList[i]);
-
                     questList.RemoveAt(i);
+
+                    Finished = true;
                 }
             }
 
