@@ -403,6 +403,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  distanceToPlayer: 15
+  minDistanceToPlayer: 5
+  maxDistanceToPlayer: 50
   mouseSensitivity:
     horizontal: 60
     vertical: 60
