@@ -24,6 +24,8 @@ public class Player_quest_manager : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position, quest.transform.position);
 
+            //Debug.Log(distance);
+
             if (distance < proximityThreshold && quest.interact)
             {
                 quest.Show_Button();
