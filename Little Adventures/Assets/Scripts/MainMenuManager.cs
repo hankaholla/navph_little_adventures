@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -34,6 +35,20 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit(); // Quit the application in a built version
         #endif
         Debug.Log("Quit Game");
+    }
+
+    public void ToggleMusic(bool isOn)
+    {
+        if (MusicManager.instance != null)
+        {
+            // dynamically set the toggle reference to the main menu's toggle
+            MusicManager.instance.SetToggleReference(GetComponentInChildren<Toggle>());
+            MusicManager.instance.OnToggleChanged(isOn);
+        }
+        else
+        {
+            Debug.LogWarning("MusicManager instance not found.");
+        }
     }
 }
 

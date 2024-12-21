@@ -5,7 +5,7 @@ public class MusicManager : MonoBehaviour
 {
     public Toggle musicToggle;
     public AudioSource audioSource;
-    private static MusicManager instance;  // Singleton instance
+    public static MusicManager instance;  // Singleton instance
 
     void Awake()
     {
@@ -28,20 +28,37 @@ public class MusicManager : MonoBehaviour
         musicToggle.onValueChanged.AddListener(OnToggleChanged);
     }
 
-    void OnToggleChanged(bool isOn)
+    public void SetToggleReference(Toggle newToggle)
+    {
+        if (musicToggle != null)
+        {
+            musicToggle.onValueChanged.RemoveListener(OnToggleChanged); // Remove listener from the old toggle
+        }
+
+        musicToggle = newToggle; // Assign the new toggle
+
+        if (musicToggle != null)
+        {
+            musicToggle.isOn = audioSource.isPlaying; // Sync the toggle state with audio playback
+            musicToggle.onValueChanged.AddListener(OnToggleChanged); // Add listener to the new toggle
+        }
+    }
+
+
+    public void OnToggleChanged(bool isOn)
     {
         if (isOn)
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.Play(); // Play the music
+                audioSource.Play();
             }
         }
         else
         {
             if (audioSource.isPlaying)
             {
-                audioSource.Stop(); // Stop the music
+                audioSource.Stop();
             }
         }
     }

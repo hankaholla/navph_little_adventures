@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        void Update()
+    private void Update()
     {
         // Detect Escape key press to toggle the pause menu
         if (Input.GetKeyDown(KeyCode.Escape))

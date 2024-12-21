@@ -36,14 +36,28 @@ public class PauseMenu : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;  // Stop play mode in Unity Editor
         #else
-        Application.Quit();  // Quit game when in build
+        Application.Quit();  // quit game when in build mode
         #endif
     }
 
-    // Return to main menu
+    // return to main menu
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");  // Load menu scene
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ToggleMusic(bool isOn)
+    {
+        if (MusicManager.instance != null)
+        {
+            // dynamically set the toggle reference to the pause menu's toggle
+            MusicManager.instance.SetToggleReference(GetComponentInChildren<Toggle>());
+            MusicManager.instance.OnToggleChanged(isOn);
+        }
+        else
+        {
+            Debug.LogWarning("MusicManager instance not found.");
+        }
     }
 }
