@@ -6,6 +6,21 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuCanvas;  // Reference to the PauseMenu Canvas
     public bool isPaused = false;      // Keeps track of the pause state
+    private static PauseMenu instance;
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);  // Destroy duplicate instances
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // Persist this instance
+        }
+    }
+
 
     // Show pause menu and pause the game
     public void PauseGame()
@@ -27,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;  // Make sure time resumes
+        pauseMenuCanvas.SetActive(false);  // Hide the pause menu
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Reload current scene - city scene
     }
 
@@ -45,6 +61,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        pauseMenuCanvas.SetActive(false);  // Hide the pause menu
     }
 
     public void ToggleMusic(bool isOn)
