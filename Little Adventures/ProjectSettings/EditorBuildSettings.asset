@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/City_v2.unity
-    guid: b6dbd0ffee621944f9becf2a05b3d901
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3e65972fb720670429e26eb7837cdd0e
   - enabled: 1
-    path: Assets/Scenes/ShopMinigame.unity
-    guid: 8bb6197c9ba00814da5fe2222f868e52
+    path: Assets/Scenes/City.unity
+    guid: 876292f3e2658c644bac04276f6493f4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 532e7bfa22fa62c47b5950fe9f3d7453, type: 3}
   m_UseUCBPForAssetBundles: 0
