@@ -15803,7 +15803,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 60c4672aea5738f4b9d1bfb2e37429eb, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d4ed3ab453a52b545b79ea2a1f936e48, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1577598790
 PrefabInstance:
@@ -21026,11 +21026,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 624893144141353839, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: upRate
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 624893144141353839, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: decayRate
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 624893144141353839, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: anxiety_bar
@@ -21050,7 +21050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554002172064806885, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: playerSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7554002172064806885, guid: 802329298d870534fa05464ad438f26c, type: 3}
       propertyPath: rotationSpeed

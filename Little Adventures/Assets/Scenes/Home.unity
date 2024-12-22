@@ -3085,7 +3085,7 @@ PrefabInstance:
     - target: {fileID: 8002379831115820907, guid: 8bbc64c3be0f5e34e8e9feebaa2d7f54, type: 3}
       propertyPath: cityReturnPoint
       value: 
-      objectReference: {fileID: 1234026402}
+      objectReference: {fileID: 0}
     - target: {fileID: 8002379831115820907, guid: 8bbc64c3be0f5e34e8e9feebaa2d7f54, type: 3}
       propertyPath: targetSceneName
       value: City_v2

@@ -78,8 +78,8 @@ public class ShopController : MonoBehaviour
 
     private void Update()
     {
-        // exit the shop when user presses escape
-         if (Input.GetKeyDown(KeyCode.Escape))
+        // exit the shop when user presses X
+         if (Input.GetKeyDown(KeyCode.X))
         {
             SceneManager.LoadScene(citySceneName);
         }

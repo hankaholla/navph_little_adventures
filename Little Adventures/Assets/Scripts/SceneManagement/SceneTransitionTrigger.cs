@@ -10,8 +10,11 @@ public class SceneTransitionTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-             // Set the return position to remebmer after transition back into the city
-            PlayerPositionManager.SetReturnPosition(cityReturnPoint.position); 
+            if (cityReturnPoint != null)
+            {
+                // Set the return position to remebmer after transition back into the city
+                PlayerPositionManager.SetReturnPosition(cityReturnPoint.position); 
+            }
             SceneManager.LoadScene(targetSceneName);
         }
     }

@@ -20,6 +20,6 @@ public class ShopHUD : MonoBehaviour
 
     public void showGameOverText()
     {
-        gameOverText.text = "Well done, you have found all necessary fruits and vegetables.<br>You can leave the shop by pressing Escape.";
+        gameOverText.text = "Well done, you have found all necessary fruits and vegetables.<br>You can leave the shop by pressing X.";
     }
 }
