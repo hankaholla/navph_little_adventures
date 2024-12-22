@@ -1,56 +1,56 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // For loading scenes
-using UnityEngine.UI;  // For accessing UI elements
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenuCanvas;  // Reference to the PauseMenu Canvas
-    public bool isPaused = false;      // Keeps track of the pause state
+    public GameObject pauseMenuCanvas;
+    public bool isPaused = false;    // keeps track of the pause state
     private static PauseMenu instance;
 
     void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);  // Destroy duplicate instances
+            Destroy(gameObject);  // destroy duplicate instances
         }
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Persist this instance
+            DontDestroyOnLoad(gameObject);  // persist this instance
         }
     }
 
 
-    // Show pause menu and pause the game
+    // show pause menu and pause the game
     public void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f;  // Stop game time
-        pauseMenuCanvas.SetActive(true);  // Show the pause menu
+        Time.timeScale = 0f;
+        pauseMenuCanvas.SetActive(true);
     }
 
-    // Hide pause menu and resume the game
+    // hide pause menu and resume the game
     public void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f;  // Resume game time
-        pauseMenuCanvas.SetActive(false);  // Hide the pause menu
+        Time.timeScale = 1f;
+        pauseMenuCanvas.SetActive(false);
     }
 
-    // Restart the game (reload the current scene)
+    // restart the game (reload the current scene)
     public void RestartGame()
     {
-        Time.timeScale = 1f;  // Make sure time resumes
-        pauseMenuCanvas.SetActive(false);  // Hide the pause menu
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Reload current scene - city scene
+        Time.timeScale = 1f;
+        pauseMenuCanvas.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Quit the game
     public void QuitGame()
     {
         #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;  // Stop play mode in Unity Editor
+        UnityEditor.EditorApplication.isPlaying = false;  // stop play mode in Unity Editor
         #else
         Application.Quit();  // quit game when in build mode
         #endif
@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-        pauseMenuCanvas.SetActive(false);  // Hide the pause menu
+        pauseMenuCanvas.SetActive(false);  // hide the pause menu
     }
 
     public void ToggleMusic(bool isOn)

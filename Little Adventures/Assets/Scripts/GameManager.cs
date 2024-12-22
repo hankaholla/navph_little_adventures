@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public PauseMenu pauseMenuScript; // Reference to the PauseMenu script
+    public PauseMenu pauseMenuScript;
     public static GameManager instance;
 
     private void Awake()
@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Persist through scene changes
+            DontDestroyOnLoad(gameObject); // persist through scene changes
         }
         else
         {
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // Detect Escape key press to toggle the pause menu
+        // detect ESC key press to toggle the pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseMenuScript.isPaused)

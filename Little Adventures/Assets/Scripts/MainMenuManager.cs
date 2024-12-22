@@ -24,7 +24,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("City");
+        SceneManager.LoadScene("City_v2");
     }
 
     public void QuitGame()
