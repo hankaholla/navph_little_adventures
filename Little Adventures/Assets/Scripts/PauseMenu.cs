@@ -5,19 +5,19 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuCanvas;
-    public bool isPaused = false;    // keeps track of the pause state
+    public bool isPaused = false;    // keeps track of the pause menu state
     private static PauseMenu instance;
 
     void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);  // destroy duplicate instances
+            Destroy(gameObject);  // destroy duplicate instances of pause menu
         }
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // persist this instance
+            DontDestroyOnLoad(gameObject);  // persist this instance of pause menu even when scene changes
         }
     }
 
@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Home");
     }
 
-    // Quit the game
+    // quit the game
     public void QuitGame()
     {
         #if UNITY_EDITOR

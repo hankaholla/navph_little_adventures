@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // persist through scene changes
+            // ensure that the game manager works through scene chages
+            DontDestroyOnLoad(gameObject);
         }
         else
         {

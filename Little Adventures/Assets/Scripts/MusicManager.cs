@@ -5,23 +5,24 @@ public class MusicManager : MonoBehaviour
 {
     public Toggle musicToggle;
     public AudioSource audioSource;
-    public static MusicManager instance;  // Singleton instance
+    public static MusicManager instance;
 
     void Awake()
     {
-        // If there is already another instance of MusicManager, destroy this one
+        // if there is already another instance of MusicManager, destroy this one
         if (instance != null)
         {
-            Destroy(gameObject); // Destroy this object to keep only one MusicManager
+            Destroy(gameObject);
         }
         else
         {
-            // Set this object as the persistent one across scenes
+            // set this object as the persistent one across scenes
             instance = this;
-            DontDestroyOnLoad(gameObject); // Prevent the music object from being destroyed
+            DontDestroyOnLoad(gameObject);
         }
     }
 
+    // add listener on the current music toggle
     void Start()
     {
         musicToggle.isOn = audioSource.isPlaying;
@@ -32,19 +33,19 @@ public class MusicManager : MonoBehaviour
     {
         if (musicToggle != null)
         {
-            musicToggle.onValueChanged.RemoveListener(OnToggleChanged); // Remove listener from the old toggle
+            musicToggle.onValueChanged.RemoveListener(OnToggleChanged); // remove listener from the old toggle
         }
 
-        musicToggle = newToggle; // Assign the new toggle
+        musicToggle = newToggle; // assign the new toggle from current menu
 
         if (musicToggle != null)
         {
-            musicToggle.isOn = audioSource.isPlaying; // Sync the toggle state with audio playback
-            musicToggle.onValueChanged.AddListener(OnToggleChanged); // Add listener to the new toggle
+            musicToggle.isOn = audioSource.isPlaying; // sync the toggle state with audio
+            musicToggle.onValueChanged.AddListener(OnToggleChanged); // add listener to the new toggle
         }
     }
 
-
+    // manage music on/off
     public void OnToggleChanged(bool isOn)
     {
         if (isOn)

@@ -12,14 +12,15 @@ public class MainMenuManager : MonoBehaviour
 
     public void ToggleKeyBindingsPanel()
     {
-        bool isActive = KeyBindingsPanel.activeSelf; // Check if the panel is currently active
-        KeyBindingsPanel.SetActive(!isActive);      // Toggle the active state
+        // check if the panel is currently active
+        bool isActive = KeyBindingsPanel.activeSelf; 
+        KeyBindingsPanel.SetActive(!isActive);
     }
 
     public void ToggleCreditsPanel()
     {
-        bool isActive = CreditsPanel.activeSelf; // Check if the panel is currently active
-        CreditsPanel.SetActive(!isActive);      // Toggle the active state
+        bool isActive = CreditsPanel.activeSelf;
+        CreditsPanel.SetActive(!isActive);
     }
 
     public void StartGame()
@@ -29,10 +30,10 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         EditorApplication.isPlaying = false; // Stop Play mode in Unity Editor
-        #else
-        Application.Quit(); // Quit the application in a built version
+#else
+        Application.Quit();
         #endif
         Debug.Log("Quit Game");
     }
