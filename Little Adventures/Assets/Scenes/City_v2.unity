@@ -17920,7 +17920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Key Bindings
+  m_text: 'Quit Game
 
 '
   m_isRightToLeft: 0
