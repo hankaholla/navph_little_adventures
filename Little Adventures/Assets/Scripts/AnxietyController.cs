@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 [RequireComponent(typeof(AnxietyBar))]
 public class AnxietyController : MonoBehaviour
 {
-    //[SerializeField] TextMeshProUGUI countText;
     [SerializeField] string anxiety_tag;
 
     public static float proximityThreshold = 10f;  // Set the distance threshold for being "too close"
@@ -82,21 +81,18 @@ public class AnxietyController : MonoBehaviour
                 {
                     down_choice = 0;
                     cameraController.TriggerFadeIn(maxFadeAlpha1, 0);
-                    Debug.Log("controlel");
                 }
 
                 if (proximityTimer >= 3 && proximityTimer < 4 && down_choice != 1)
                 {
                     down_choice = 1;
                     cameraController.TriggerFadeIn(maxFadeAlpha2, maxFadeAlpha1);
-                    Debug.Log("controlel");
                 }
 
                 if (proximityTimer >= 4 && proximityTimer < 5 && down_choice != 2)
                 {
                     down_choice = 2;
                     cameraController.TriggerFadeIn(maxFadeAlpha3, maxFadeAlpha2);
-                    Debug.Log("controlel");
                 }
             }
 
@@ -106,19 +102,16 @@ public class AnxietyController : MonoBehaviour
                 {   
                     up_choice = 1;
                     cameraController.TriggerFadeOut(0, maxFadeAlpha1);
-                    Debug.Log("maxFadeAlpha1");
                 }
                 if (proximityTimer >= 3 && proximityTimer < 4 && up_choice != 2)
                 {
                     up_choice = 2;
                     cameraController.TriggerFadeOut(maxFadeAlpha1, maxFadeAlpha2);
-                    Debug.Log("maxFadeAlpha2");
                 }
                 if (proximityTimer >= 4 && up_choice != 3)
                 {
                     up_choice = 3;
                     cameraController.TriggerFadeOut(maxFadeAlpha2, maxFadeAlpha3);
-                    Debug.Log("maxFadeAlpha3");
                 }
             }    
         }

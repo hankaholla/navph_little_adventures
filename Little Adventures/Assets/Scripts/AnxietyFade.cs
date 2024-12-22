@@ -14,13 +14,11 @@ public class AnxietyFade : MonoBehaviour
 
     public void TriggerFadeOut(float startAlpha, float maxFadeAlpha)
     {
-        Debug.Log("here");
         StartCoroutine(FadeOut(startAlpha, maxFadeAlpha));
     }
 
     public void TriggerFadeIn(float startAlpha, float minAlpha)
     {
-        Debug.Log("here");
         StartCoroutine(FadeIn(startAlpha, minAlpha));
     }
 

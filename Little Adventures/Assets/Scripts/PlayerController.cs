@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             if (isGliding)
             {
                 currentGravity = glidingGravity; // TODO: slowly decrease gravity during glide + Mathf.Log10(Time.time - glideStart);
-                Debug.Log(currentGravity);   
+                // Debug.Log(currentGravity);   
             }
             currentDownwardVelocity += currentGravity * Time.deltaTime;
         }
