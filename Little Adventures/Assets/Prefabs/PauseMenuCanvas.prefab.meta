@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Little Adventures/Assets/Scenes/main menu.unity.meta
+guid: 738258edbb3e24e42b7b516ca1be19ba
+DefaultImporter:
+========
 guid: 058da235394894049ad873447da285e5
 PrefabImporter:
+>>>>>>>> main:Little Adventures/Assets/Prefabs/PauseMenuCanvas.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
