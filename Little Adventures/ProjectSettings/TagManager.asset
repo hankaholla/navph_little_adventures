@@ -6,11 +6,16 @@ TagManager:
   tags:
   - Ground
   - NPC
+  - Apple
+  - Banana
+  - Tomato
+  - Quest
+  - Quest_npc
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - PostProcessLayer

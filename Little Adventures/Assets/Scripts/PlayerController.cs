@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerController2 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // inputs
     private Vector2 input;
@@ -82,7 +82,7 @@ public class PlayerController2 : MonoBehaviour
             if (isGliding)
             {
                 currentGravity = glidingGravity; // TODO: slowly decrease gravity during glide + Mathf.Log10(Time.time - glideStart);
-                Debug.Log(currentGravity);   
+                // Debug.Log(currentGravity);   
             }
             currentDownwardVelocity += currentGravity * Time.deltaTime;
         }
